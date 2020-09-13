@@ -22,7 +22,7 @@ function HoroSection() {
           buttonStyle="btn--primary"
           buttonSize="btn--large"
         >
-          BOOK NOW <i class="fas fa-plane-departure" />
+          BOOK NOW <i className="fas fa-plane-departure" />
         </Button>
       </div>
     </div>

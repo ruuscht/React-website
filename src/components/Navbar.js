@@ -7,6 +7,7 @@ function Navbar() {
   const [click, setClick] = useState(false);
   const closeMobileMenu = () => setClick(false);
   const [button, setButton] = useState(true);
+  const [navbar, setNavbar] = useState(false);
 
   const handleClick = () => setClick(!click);
 
@@ -24,12 +25,22 @@ function Navbar() {
 
   window.addEventListener("resize", showButton);
 
+  const changeBackground = () => {
+    if (window.scrollY >= 80) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
+
   return (
     <>
-      <nav className="navbar">
+      <nav className={navbar ? "navbar active" : "navbar"}>
         <div className="navbar-container">
           <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-            Ruuschtuu <i class="fas fa-globe-americas"></i>
+            Ruuschtuu <i className="fas fa-globe-americas"></i>
           </Link>
           <div className="menu-icon" onClick={handleClick}>
             <i className={click ? "fas fa-times" : "fas fa-bars"} />

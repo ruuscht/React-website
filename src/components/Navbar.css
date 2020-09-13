@@ -1,5 +1,5 @@
 .navbar {
-  background-color: #50460c;
+  background: #50460c;
   height: 80px;
   display: flex;
   justify-content: center;
@@ -9,6 +9,10 @@
   top: 0;
   z-index: 999;
 }
+
+/* .navbar.active {
+  background: transparent;
+} */
 
 .navbar-container {
   display: flex;
